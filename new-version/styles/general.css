@@ -1,0 +1,250 @@
+@import url(fonts/font-style.css);
+
+:root {
+  --primary-red: #ba0000;
+  --secondary-red: #be5e01;
+  --primary-blue: #000196;
+  --secondary-blue: #3c81af;
+  --alpha-green: #198011;
+  --A-yellow: #ffcd72;
+  --B-brown: #3a2500;
+  --beta-purple: #6b0041;
+  --primary-bg: #fff6f2;
+  --ff-primary: HKGrotesk;
+}
+
+.white-hamburger {
+  color: #fff6f2;
+}
+
+html {
+  font-family: var(--ff-primary), sans-serif;
+}
+
+/* CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* END OF CSS RESET */
+body{
+  overflow: hidden;
+}
+
+#navbar{
+  padding: 1rem;
+  position: fixed;
+  width: 20%;
+  height: 95vh;
+  background-color: var(--primary-red);
+}
+
+#nav-list {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.nav-link {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.35rem;
+  font-size: 1.5rem; 
+  color: var(--primary-bg);
+  background-color: var(--primary-red);
+  text-decoration: none;
+  transition: 0.6s; 
+}
+
+.nav-link:hover {
+  color: var(--primary-red);
+  background-color: var(--primary-bg);
+}
+
+#main-content{
+  float: right;
+  width: 75%; 
+  height: 100vh;
+}
+
+footer {
+  transition: 0.6s opacity;
+  opacity: 0.7;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: var(--alpha-green);
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 8px;
+  }
+
+  #navbar{
+    padding: 1rem 3rem;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1.5s;
+  }
+
+  #logo-header {
+    width: 8rem;
+  }
+
+  #logo {
+    height: 100%; 
+    width: 100%; 
+    object-fit: contain;
+  }
+
+  .responsive-invisible {
+    display: none;
+  }
+  
+  .menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+  }
+
+  .menu-btn-burger{
+    width: 35px;
+    height: 4px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+  }
+
+  .menu-btn-burger::before, .menu-btn-burger::after{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 4px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+  }
+
+  .menu-btn-burger::before{
+    transform: translateY(-12px);
+  }
+
+  .menu-btn-burger::after{
+    transform: translateY(12px);
+  }
+
+  .menu-btn.open .menu-btn-burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menu-btn.open .menu-btn-burger:before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu-btn.open .menu-btn-burger:after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+}
