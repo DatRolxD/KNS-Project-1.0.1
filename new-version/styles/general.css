@@ -180,7 +180,15 @@ footer:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 1.5s;
+    transition: height 1.5s;
+  }
+
+  #nav-list{
+    align-items: flex-start;
+  }
+
+  .nav-link{
+    font-size: 3.5rem;
   }
 
   #logo-header {
@@ -198,12 +206,14 @@ footer:hover {
   }
   
   .menu-btn {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 8rem;
-    height: 8rem;
+    height: 10vh;
     cursor: pointer;
     transition: all .5s ease-in-out;
   }
