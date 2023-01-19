@@ -16,6 +16,17 @@ html {
   font-family: HKGrotesk, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+}
 /* CSS RESET */
 /* Box sizing rules */
 *,
@@ -93,7 +104,6 @@ select {
 }
 /* END OF CSS RESET */
 body{
-  overflow: hidden;
 }
 
 nav{
