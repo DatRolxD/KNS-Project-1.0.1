@@ -36,28 +36,21 @@ const blur = document.querySelector('#blur-me');
 let plusHolder = document.querySelectorAll('.plus-holder');
 plusHolder = [...plusHolder];
 let contentOpen = [];
-for (let i = 0; i < plusHolder.length; i++){
-  contentOpen[i] = false;
-}
-let index = 0;
-plusHolder.forEach(plushold => {
-  /*console.log(plushold);
-  console.log(index);
-  */
-  plushold.addEventListener('click', () => {
-    if(!contentOpen[index]){
-      plushold.classList.add('open');
-      contentOpen[index] = true;
-    }
-    else {
-      plushold.classList.remove('open');
-      contentOpen[index] = false;
-      }
-      console.log(contentOpen[index]);
-  });
-  index++; 
-})
 
+for (let c = 0; c < plusHolder.length; c++){
+  contentOpen[c] = false;
+  plusHolder[c].addEventListener('click', () => {
+    if (!contentOpen[c]){
+      plusHolder[c].classList.add('open');
+      contentOpen[c] = true;
+    }
+    else{
+      plusHolder[c].classList.remove('open');
+      contentOpen[c] = false;
+    }
+    console.log(`Index ${c} = ${contentOpen[c]}`);
+  })
+}
 
 footerArrow.addEventListener('click', () => {
   if (footerStatus === false){
@@ -72,7 +65,7 @@ footerArrow.addEventListener('click', () => {
     */
     footerContent.style.display = 'grid';
     footerContent.classList.add('footer-grid');
-    blur.classList.add('blur');
+    /* blur.classList.add('blur'); */
   }
   else {
     footerContent.removeAttribute('style');
@@ -80,7 +73,7 @@ footerArrow.addEventListener('click', () => {
     footerArrow.removeAttribute('style');
     footer.classList.add('footer-js');
     footer.classList.remove('footer-js-click');
-    blur.classList.remove('blur');
+    /* blur.classList.remove('blur'); */
     footerStatus = false;
   }
 });
