@@ -31,6 +31,25 @@ const footer = document.querySelector('#footer');
 const footerArrow = document.querySelector('#footer-arrow');
 const footerContent = document.querySelector('#footer-content');
 let footerStatus = false; 
+const blur = document.querySelector('#blur-me');
+
+let plusHolder = document.querySelectorAll('.plus-holder');
+plusHolder = [...plusHolder];
+let contentOpen = false;
+plusHolder.forEach(plushold => {
+  console.log(plushold);
+  plushold.addEventListener('click', () => {
+    if(!contentOpen){
+      plushold.classList.add('open');
+      contentOpen = true;
+    }
+    else {
+      plushold.classList.remove('open');
+      contentOpen = false;
+      }
+  });
+})
+
 
 footerArrow.addEventListener('click', () => {
   if (footerStatus === false){
@@ -45,7 +64,7 @@ footerArrow.addEventListener('click', () => {
     */
     footerContent.style.display = 'grid';
     footerContent.classList.add('footer-grid');
-    
+    blur.classList.add('blur');
   }
   else {
     footerContent.removeAttribute('style');
@@ -53,6 +72,7 @@ footerArrow.addEventListener('click', () => {
     footerArrow.removeAttribute('style');
     footer.classList.add('footer-js');
     footer.classList.remove('footer-js-click');
+    blur.classList.remove('blur');
     footerStatus = false;
   }
 });
