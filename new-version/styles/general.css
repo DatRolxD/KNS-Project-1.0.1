@@ -189,6 +189,7 @@ footer {
   opacity: 1;
   justify-content: flex-start;
   padding: 1rem;
+  min-height: auto;
 }
 
 .footer-js:hover {
@@ -381,8 +382,8 @@ footer {
   }
 
   .footer-js-click{
-    max-height: 50vh;
-    height: auto;
+    max-height: 90vh;
+    height: 90vh;
     opacity: 1;
     justify-content: flex-start;
     padding: 1rem;
