@@ -35,19 +35,27 @@ const blur = document.querySelector('#blur-me');
 
 let plusHolder = document.querySelectorAll('.plus-holder');
 plusHolder = [...plusHolder];
-let contentOpen = false;
+let contentOpen = [];
+for (let i = 0; i < plusHolder.length; i++){
+  contentOpen[i] = false;
+}
+let index = 0;
 plusHolder.forEach(plushold => {
-  console.log(plushold);
+  /*console.log(plushold);
+  console.log(index);
+  */
   plushold.addEventListener('click', () => {
-    if(!contentOpen){
+    if(!contentOpen[index]){
       plushold.classList.add('open');
-      contentOpen = true;
+      contentOpen[index] = true;
     }
     else {
       plushold.classList.remove('open');
-      contentOpen = false;
+      contentOpen[index] = false;
       }
+      console.log(contentOpen[index]);
   });
+  index++; 
 })
 
 
