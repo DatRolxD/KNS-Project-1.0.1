@@ -70,7 +70,7 @@ for (let c = 0; c < plusHolder.length; c++){
   plusHolder[c].addEventListener('click', () => {
     if (!contentOpen[c]){
       plusHolder[c].classList.add('open');
-      let paragraphs = footerColumns[c].querySelectorAll('.footer-para');
+      let paragraphs = footerColumns[c].querySelectorAll('.js-display');
       paragraphs = [...paragraphs];
       paragraphs.forEach(paragraph => {
         paragraph.classList.remove('mobile-invisible');
@@ -91,7 +91,7 @@ for (let c = 0; c < plusHolder.length; c++){
         footerPara.classList.add('mobile-invisible');
       });
       */
-      let paragraphs = footerColumns[c].querySelectorAll('.footer-para');
+      let paragraphs = footerColumns[c].querySelectorAll('.js-display'); 
       paragraphs = [...paragraphs];
       paragraphs.forEach(paragraph => {
         paragraph.classList.remove('footer-para-visible');
