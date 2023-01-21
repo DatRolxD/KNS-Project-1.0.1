@@ -101,3 +101,45 @@ for (let c = 0; c < plusHolder.length; c++){
     }
   })
 }
+const facebookSvg = document.querySelector('#facebook-svg');
+const instagramSvg = document.querySelector('#instagram-svg');
+const linkedinSvg = document.querySelector('#linkedin-svg');
+let clickableLinks = document.querySelectorAll('.clickable');
+clickableLinks = [...clickableLinks];
+let contactLinks = document.querySelectorAll('.contact-link');
+contactLinks = [...contactLinks];
+
+clickableLinks.forEach(clickableLink => {
+  clickableLink.addEventListener('mouseover', () => {
+    if (clickableLink.getAttribute('id') === 'facebook'){
+      facebookSvg.classList.add('facebook-svg');
+      contactLinks[0].style.color = 'var(--alpha-green)';
+    }
+
+    else if (clickableLink.getAttribute('id') === 'instagram'){
+      instagramSvg.classList.add('instagram-svg');
+      contactLinks[1].style.color = 'var(--alpha-green)';
+    }
+
+    else if (clickableLink.getAttribute('id') === 'linkedin'){
+      linkedinSvg.classList.add('linkedin-svg');
+      contactLinks[2].style.color = 'var(--alpha-green)';
+    }
+  })
+
+  clickableLink.addEventListener('mouseout', () => {
+    if (clickableLink.getAttribute('id') === 'facebook'){
+      facebookSvg.classList.remove('facebook-svg');
+      contactLinks[0].removeAttribute('style');
+    }
+    else if (clickableLink.getAttribute('id') === 'instagram'){
+      instagramSvg.classList.remove('instagram-svg');
+      contactLinks[1].removeAttribute('style');
+    }
+
+    else if (clickableLink.getAttribute('id') === 'linkedin'){
+      linkedinSvg.classList.remove('linkedin-svg');
+      contactLinks[2].removeAttribute('style');
+    }
+  })
+})
