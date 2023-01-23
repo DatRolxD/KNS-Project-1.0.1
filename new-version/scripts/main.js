@@ -143,3 +143,10 @@ clickableLinks.forEach(clickableLink => {
     }
   })
 })
+
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+const mapSvg = document.querySelector('#map-europe');
+if (mediaQuery.matches) {
+  mapSvg.setAttribute('preserveAspectRatio', "xMidYMin slice");
+  mapSvg.setAttribute('viewBox', "185 80 700 520");
+}
