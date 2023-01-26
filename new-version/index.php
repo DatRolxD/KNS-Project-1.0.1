@@ -9,7 +9,7 @@
   <title>Koło Naukowe Slawistów</title>
   <link rel="stylesheet" href="styles/general.css">
   <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+ <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css"> -->
 
 </head>
 <body>
@@ -29,8 +29,12 @@
   </nav>
 
   <main id="main-content">
+    <div id="heading-container">
+      <h2 id="main-heading">Wybierz kraj</h2>
+      <!-- <h2 id="country-name" class="country-heading">Łużyce</h2> -->
+    </div>
     <section id="map-container">
-      <?php include('svg-map.php') ?>
+      <?php include('new-svg-map.php') ?>
     </section>
   </main>
 
