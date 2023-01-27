@@ -1,4 +1,4 @@
-<svg preserveAspectRatio="none" id="map-europe" viewBox="20 0 680 520" xmlns:xlink="http://www.w3.org/1999/xlink"
+<svg id="map-europe" viewBox="20 0 680 520" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns="http://www.w3.org/2000/svg">
   <defs id="defs3159">
     <clipPath id="clipPath7195">
