@@ -9,8 +9,6 @@
   <title>Koło Naukowe Slawistów</title>
   <link rel="stylesheet" href="styles/general.css">
   <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-
 </head>
 <body>
   <nav id="navbar">
@@ -19,7 +17,7 @@
     </header>
     <ul id="nav-list">
       <li><a class="nav-link responsive-invisible active" href="index.html">Strona główna</a></li>
-      <li><a class="nav-link responsive-invisible" href="#onas.php">O nas</a></li>
+      <li><a class="nav-link responsive-invisible" href="onas.php">O nas</a></li>
       <li><a class="nav-link responsive-invisible" href="#posts">Aktualności</a></li>
       <li><a class="nav-link responsive-invisible" href="#magazine">Czasopismo</a></li>
     </ul>
@@ -29,7 +27,9 @@
   </nav>
 
   <main id="main-content">
-    
+    <section id="map-container">
+      <?php include('svg-map.php') ?>
+    </section>
   </main>
 
   <footer id="footer" class="footer-js">
@@ -45,12 +45,10 @@
           </div>
         </div>
         <div id="cooperation-grid" class="js-display mobile-invisible">
-          <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img src="images/coop/polin.png" alt="Muzeum Historii Polskich Żydów"></a></div>
-          <div class="cooperation-card">Lorem</div>
-          <div class="cooperation-card">Lorem</div>
-          <div class="cooperation-card">Lorem</div>
-          <div class="cooperation-card">Lorem</div>
-          <div class="cooperation-card">Lorem</div>
+          <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo" src="images/coop/polin.png" alt="Muzeum Historii Polskich Żydów"></a></div>
+          <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo" src="images/coop/polin.png" alt="Muzeum Historii Polskich Żydów"></a></div>
+          <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo" src="images/coop/polin.png" alt="Muzeum Historii Polskich Żydów"></a></div>
+          <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo" src="images/coop/polin.png" alt="Muzeum Historii Polskich Żydów"></a></div>
         </div>
       </div>
       <div class="footer-column">
@@ -90,8 +88,7 @@
             <div class="plus"></div>
           </div>
         </div>
-        <div id="newsletter-wrapper" class="js-display mobile-invisible">
-                      <!-- Begin Mailchimp Signup Form -->
+        <div id="newsletter-frame" class="js-display mobile-invisible">
           <div id="mc_embed_signup">
             <form action="https://facebook.us21.list-manage.com/subscribe/post?u=459b676ee7254f43ff3d5110c&amp;id=ff7b255f3d&amp;f_id=0082cee1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">
@@ -106,12 +103,11 @@
           <div id="mce-responses" class="clear foot">
             <div class="response" id="mce-error-response" style="display:none"></div>
             <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          </div>    
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_459b676ee7254f43ff3d5110c_ff7b255f3d" tabindex="-1" value=""></div>
                 <div class="optionalParent">
                     <div class="clear foot">
-                        <input type="submit" value="Subskrybuj" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: var(--primary-bg); color: var(--alpha-green);">
-                        <p class="brandingLogo"><a href="http://eepurl.com/ig0S41" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                        <input type="submit" value="Subskrybuj" name="subscribe" id="mc-embedded-subscribe" class="button">
                     </div>
                 </div>
             </div>
