@@ -15,7 +15,7 @@
   <?php include('content/navbar.php') ?>
   <main id="main-content">
     <section id="map-container">
-      <?php include('content/svg-map.php') ?>
+      
     </section>
   </main>
   <?php include('content/footer.php') ?>
