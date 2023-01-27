@@ -5,11 +5,12 @@
   --secondary-red: #be5e01;
   --primary-blue: #000196;
   --secondary-blue: #3c81af;
-  --alpha-green: #198011;
+  --alpha-green: rgb(25, 128, 17);
   --A-yellow: #ffcd72;
   --B-brown: #3a2500;
   --beta-purple: #6b0041;
-  --primary-bg: #fff6f2;
+  --primary-bg:  #fff6f2; 
+  --primary-black: rgb(60, 60, 60);
   --ff-primary: HKGrotesk;
 }
 
@@ -158,11 +159,50 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--primary-bg);
 }
 
+#mobile-current-page{
+  position: absolute;
+  visibility: hidden;
+}
+
 #main-content{
+  background-color: var(--primary-bg);
   float: right;
   width: 80vw; 
   height: 95vh;
 }
+
+#tooltip-container {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  background: var(--A-yellow);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  clip-path: circle(10% at 90% 22%);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#i-button {
+  float: right;
+  color: var(--primary-bg);
+  font-weight: bold;
+  transition: color .5s;
+  position: relative;
+}
+
+#info-heading {
+  color: var(--primary-bg);
+  margin: 0;
+}
+
+#info-paragraph {
+  color: var(--primary-bg); 
+  font-size: 0.8rem;
+}
+
 
 #map-europe {
   width: 100%;
@@ -384,11 +424,56 @@ footer {
   }
 
   #main-content{ 
-    flex-direction: column;
-    justify-content: space-evenly;
     margin-top: 10vh;
     width: 100vw;
-    max-height: 85vh;
+    height: 85vh;
+  }
+
+  #tooltip-container {
+    top: 25vh;
+    right: 5vw;
+    font-size: 2rem;
+  }
+
+  #info-paragraph{
+    font-size: 1.4rem;
+  }
+
+  #i-button{
+    margin-right: 4%;
+  }
+
+  #main-text-content {
+    margin: 2.5rem;
+  }
+
+  #main-heading {
+    border-radius: 6px;
+    margin: 0 auto;
+    padding: 1rem; 
+    color: var(--B-brown); 
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  #mobile-current-page{
+    visibility: visible;
+    font-size: 3rem;
+    color: var(--primary-bg);
+    top: auto;
+    right: 0;
+    width: 100vw;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #main-heading::after{
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    content: ' ';
+    border-radius: 6px;
+    border: 1px solid var(--primary-red);
   }
 
   .center-plate{ 

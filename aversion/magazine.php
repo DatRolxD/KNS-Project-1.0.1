@@ -14,12 +14,9 @@
 
   <?php include('content/navbar.php') ?>
   <main id="main-content">
-    <section id="main-text-content">
-      <header>
-        <h1 id="main-heading">Co robimy</h1>
-      </header>
+    <section id="map-container">
+      
     </section>
-
   </main>
   <?php include('content/footer.php') ?>
 

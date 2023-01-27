@@ -1,7 +1,50 @@
+/* Determine the active page */
+let pathname = window.location.pathname;
+let navLinks = document.querySelectorAll('.nav-link');
+const mediaQuery = window.matchMedia('(max-width: 912px)');
+let indexMatch = false;
+let tooltipContainer;
+if (pathname === '/KNS-Project-1.0.1/aversion/index.php'){
+  navLinks[0].classList.add('active');
+  /* TOOLTIP FOR THE MAP ONLY INDEX.PHP */
+  indexMatch = true;
+  tooltipContainer = document.querySelector('#tooltip-container');
+  const iButton = document.querySelector('#i-button');
+  let tooltipOpen = false;
+  tooltipContainer.addEventListener('click', () => {
+    if (!tooltipOpen){
+    tooltipContainer.style.clipPath = 'circle(75%)';
+    tooltipContainer.style.background = 'var(--primary-red)';
+    iButton.textContent = 'x';
+    tooltipOpen = true;
+    }
+    else {
+      tooltipContainer.removeAttribute('style');
+      iButton.textContent = 'i';
+      tooltipOpen = false;
+    }
+  });
+  /* MOBILE-ONLY Change viewbox of the map */
+  const mapSvg = document.querySelector('#map-europe');
+  if (mediaQuery.matches) {
+    mapSvg.setAttribute('viewBox', "300 70 400 380");
+}
+}
+else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
+  navLinks[1].classList.add('active');
+}
+else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
+  navLinks[2].classList.add('active');
+}
+else if (pathname === '/KNS-Project-1.0.1/aversion/magazine.php'){
+  navLinks[3].classList.add('active');
+}
+
 /* MOBILE-ONLY Open navbar by clicking on the hamburger menu  */
 const menuBtn = document.querySelector('.menu-btn');
 const navbar = document.querySelector('#navbar');
 const navList = document.querySelector('#nav-list');
+const currentPage = document.querySelector('#mobile-current-page');
 let links = document.querySelectorAll('.responsive-invisible');
 links = [...links];
 
@@ -17,6 +60,10 @@ menuBtn.addEventListener('click', () => {
       footer.classList.remove('footer-js-click');
       footerStatus = false;
     }
+    if (indexMatch){
+    tooltipContainer.style.opacity = '0';
+    };
+    currentPage.style.opacity = '0';
     menuBtn.classList.add('open');
     menuOpen = true;
     navbar.style.height = '95vh';
@@ -26,6 +73,10 @@ menuBtn.addEventListener('click', () => {
     });
   }
   else {
+    if (indexMatch){
+      tooltipContainer.style.opacity = '1';
+      };
+    currentPage.style.opacity = '1';
     navList.removeAttribute('style');
     navbar.removeAttribute('style');
     menuBtn.classList.remove('open');
@@ -53,6 +104,9 @@ footerArrow.addEventListener('click', () => {
         link.classList.add('responsive-invisible');
       });
     }
+    if (indexMatch){
+      tooltipContainer.style.opacity = '0';
+      };
     footerArrow.style.transform = 'rotateX(-180deg)';
     footerStatus = true;
     footer.classList.remove('footer-js');
@@ -61,6 +115,9 @@ footerArrow.addEventListener('click', () => {
     footerContent.classList.add('footer-grid');
   }
   else {
+    if (indexMatch){
+      tooltipContainer.style.opacity = '1';
+      };
     footerContent.removeAttribute('style');
     footerContent.classList.remove('footer-grid');
     footerArrow.removeAttribute('style');
@@ -165,15 +222,6 @@ clickableLinks.forEach(clickableLink => {
   })
 })
 
-/* MOBILE-ONLY Change viewbox of the map */
-const mediaQuery = window.matchMedia('(max-width: 768px)');
-const mapSvg = document.querySelector('#map-europe');
-if (mediaQuery.matches) {
-  mapSvg.setAttribute('viewBox', "300 70 400 380");
-}
 
-/* Determine the active page */
-let pathname = window.location.pathname;
-console.log(pathname);
 
 
