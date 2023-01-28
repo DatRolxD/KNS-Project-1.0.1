@@ -1,29 +1,32 @@
 /* Determine the active page */
 let pathname = window.location.pathname;
 let navLinks = document.querySelectorAll('.nav-link');
-const mediaQuery = window.matchMedia('(max-width: 912px)');
+const currentPage = document.querySelector('#mobile-current-page');
+const mediaQuery = window.matchMedia('(max-width: 712px)');
 let indexMatch = false;
 let tooltipContainer;
-if (pathname === '/KNS-Project-1.0.1/aversion/index.php'){
+if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-Project-1.0.1/aversion/' ){
   navLinks[0].classList.add('active');
+  currentPage.textContent = 'Strona główna';
   /* TOOLTIP FOR THE MAP ONLY INDEX.PHP */
   indexMatch = true;
   tooltipContainer = document.querySelector('#tooltip-container');
   const iButton = document.querySelector('#i-button');
   let tooltipOpen = false;
-  tooltipContainer.addEventListener('click', () => {
+  function tooltip () {
     if (!tooltipOpen){
-    tooltipContainer.style.clipPath = 'circle(75%)';
-    tooltipContainer.style.background = 'var(--primary-red)';
-    iButton.textContent = 'x';
-    tooltipOpen = true;
-    }
-    else {
-      tooltipContainer.removeAttribute('style');
-      iButton.textContent = 'i';
-      tooltipOpen = false;
-    }
-  });
+      tooltipContainer.style.clipPath = 'circle(75%)';
+      tooltipContainer.style.background = 'var(--primary-red)';
+      iButton.textContent = 'x';
+      tooltipOpen = true;
+      }
+      else {
+        tooltipContainer.removeAttribute('style');
+        iButton.textContent = 'i';
+        tooltipOpen = false;
+      }
+  };
+  tooltipContainer.addEventListener('click', tooltip);
   /* MOBILE-ONLY Change viewbox of the map */
   const mapSvg = document.querySelector('#map-europe');
   if (mediaQuery.matches) {
@@ -32,22 +35,23 @@ if (pathname === '/KNS-Project-1.0.1/aversion/index.php'){
 }
 else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
   navLinks[1].classList.add('active');
+  currentPage.textContent = 'O nas';
 }
 else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
   navLinks[2].classList.add('active');
+  currentPage.textContent = 'Aktualności';
 }
 else if (pathname === '/KNS-Project-1.0.1/aversion/magazine.php'){
   navLinks[3].classList.add('active');
+  currentPage.textContent = 'Czasopismo';
 }
 
 /* MOBILE-ONLY Open navbar by clicking on the hamburger menu  */
 const menuBtn = document.querySelector('.menu-btn');
 const navbar = document.querySelector('#navbar');
 const navList = document.querySelector('#nav-list');
-const currentPage = document.querySelector('#mobile-current-page');
 let links = document.querySelectorAll('.responsive-invisible');
 links = [...links];
-
 let menuOpen = false;
 
 menuBtn.addEventListener('click', () => {
@@ -62,6 +66,7 @@ menuBtn.addEventListener('click', () => {
     }
     if (indexMatch){
     tooltipContainer.style.opacity = '0';
+    tooltipContainer.removeEventListener('click', tooltip);
     };
     currentPage.style.opacity = '0';
     menuBtn.classList.add('open');
@@ -75,6 +80,7 @@ menuBtn.addEventListener('click', () => {
   else {
     if (indexMatch){
       tooltipContainer.style.opacity = '1';
+      tooltipContainer.addEventListener('click', tooltip);
       };
     currentPage.style.opacity = '1';
     navList.removeAttribute('style');
@@ -106,6 +112,7 @@ footerArrow.addEventListener('click', () => {
     }
     if (indexMatch){
       tooltipContainer.style.opacity = '0';
+      tooltipContainer.removeEventListener('click', tooltip);
       };
     footerArrow.style.transform = 'rotateX(-180deg)';
     footerStatus = true;
@@ -117,6 +124,7 @@ footerArrow.addEventListener('click', () => {
   else {
     if (indexMatch){
       tooltipContainer.style.opacity = '1';
+      tooltipContainer.addEventListener('click', tooltip);
       };
     footerContent.removeAttribute('style');
     footerContent.classList.remove('footer-grid');
