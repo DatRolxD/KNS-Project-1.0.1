@@ -3,6 +3,7 @@ let pathname = window.location.pathname;
 let navLinks = document.querySelectorAll('.nav-link');
 const currentPage = document.querySelector('#mobile-current-page');
 const mediaQuery = window.matchMedia('(max-width: 712px)');
+const mediaQueryTablet = window.matchMedia('(min-width:712px) and (max-width: 992px)');
 let indexMatch = false;
 let tooltipContainer;
 if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-Project-1.0.1/aversion/' ){
@@ -22,7 +23,7 @@ if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-P
       }
       else {
         tooltipContainer.removeAttribute('style');
-        iButton.textContent = 'i';
+        iButton.textContent = '?';
         tooltipOpen = false;
       }
   };
@@ -32,6 +33,10 @@ if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-P
   if (mediaQuery.matches) {
     mapSvg.setAttribute('viewBox', "300 70 400 380");
 }
+  else if (mediaQueryTablet.matches){
+    mapSvg.setAttribute('viewBox', "338 175 400 380");
+  }
+
 }
 else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
   navLinks[1].classList.add('active');
@@ -40,6 +45,24 @@ else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
 else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
   navLinks[2].classList.add('active');
   currentPage.textContent = 'Aktualności';
+  let postPreviewTexts = document.querySelectorAll('.post-preview-text');
+  postPreviewTexts = [...postPreviewTexts];
+  postPreviewTexts.forEach(postPreviewText => {
+    let postLength = 507;
+    if (postPreviewText.textContent.length >= postLength){
+      let text = postPreviewText.textContent;
+      text = text.substring(0, 507);
+      let dot = text[text.length-1];
+      if (dot !== '.' && dot !== ','){
+        text += '...';
+      }
+      else if (dot === ','){
+        text = text.substring(0, 506);
+        text += '...';
+      }
+      postPreviewText.textContent = text;
+    }
+  })
 }
 else if (pathname === '/KNS-Project-1.0.1/aversion/magazine.php'){
   navLinks[3].classList.add('active');
