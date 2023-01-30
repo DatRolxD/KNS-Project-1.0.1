@@ -15,6 +15,7 @@
   --primary-bg:  hsl(18, 100%, 97%); 
   --primary-bg-a:  hsl(18, 22%, 97%); 
   --primary-black: rgb(60, 60, 60);
+  --primary-black-a: rgba(60, 60, 60, 0.1);
   --ff-primary: HKGrotesk;
 }
 
@@ -176,6 +177,13 @@ body{
   gap: 0.5rem;
 }
 
+.post-heading, .post-heading-full {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
 .post-preview{
   padding: 1rem;
   border-radius: 6px;
@@ -189,13 +197,35 @@ body{
   font-weight: 300;
   float: right;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.post-preview-info-flex{
+.post-preview-content{
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
+}
+
+.post-full-content{
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.post-preview-tags {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-preview-tag{
+  padding: 0.2rem;
+  background: var(--primary-black-a);
+  border-radius: 6px;
 }
 
 .post-preview-author{ 
@@ -225,13 +255,31 @@ body{
   color: var(--primary-bg);
 }
 
-.post-picture{
+.post-preview-picture{
   margin: 0 auto;
   object-fit: contain;
   max-height: 35vh;
   border-radius: 6px;
   box-shadow: 1px 1px 1px 1px var(--primary-red-rgbb);
 }
+
+.post-picture{
+  margin: 0 auto;
+  object-fit: contain;
+  width: 100%;
+  max-height: 60vh;
+  border-radius: 6px;
+}
+
+.post-subheading {
+  display: inline-block;
+  padding-inline: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--primary-red-rgbb);
+}
+
 
 #tooltip-container {
   position: absolute;
@@ -613,13 +661,19 @@ footer {
     height: 85vh;
   }
 
-  #post-preview-container{
-    padding-bottom: 10vh;
-  }
 
-  .post-preview-info-flex{
+
+  .post-preview-content{
     display: flex;
     flex-direction: column-reverse;
+  }
+  
+  .post-heading, .post-heading-full {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.5rem;
   }
   
 

@@ -43,8 +43,11 @@ else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
   currentPage.textContent = 'O nas';
 }
 else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
+  /* Set active link */
   navLinks[2].classList.add('active');
+  /* Display active link on a phone */
   currentPage.textContent = 'Aktualności';
+  /* Set max length of a post preview */
   let postPreviewTexts = document.querySelectorAll('.post-preview-text');
   postPreviewTexts = [...postPreviewTexts];
   postPreviewTexts.forEach(postPreviewText => {
@@ -253,6 +256,12 @@ clickableLinks.forEach(clickableLink => {
   })
 })
 
-
+  /* Add # before each tag */
+  if (document.querySelectorAll('.post-preview-tag') !== undefined){
+    let tags = document.querySelectorAll('.post-preview-tag');
+    tags.forEach(tag => {
+      tag.textContent = `#${tag.textContent}`;
+    });
+}
 
 
