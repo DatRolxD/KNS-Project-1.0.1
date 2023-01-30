@@ -280,6 +280,29 @@ body{
   border-bottom: 1px solid var(--primary-red-rgbb);
 }
 
+#magazine-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0.8fr));
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.magazine-preview{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease-in-out;
+  border-radius: 6px;
+  border: 1px solid var(--primary-red-rgbb);
+  cursor: pointer;
+}
+
+.magazine-preview:hover{
+  scale: 1.1;
+  box-shadow: 1px 1px 1px 1px var(--primary-red-rgbb);
+}
 
 #tooltip-container {
   position: absolute;

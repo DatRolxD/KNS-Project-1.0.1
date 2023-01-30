@@ -14,8 +14,19 @@
 
   <?php include('content/navbar.php') ?>
   <main id="main-content">
-    <section id="map-container">
-      
+    <section id="magazine-container">
+      <div class="magazine-preview">
+        <img src="images/magazine/magcover.png" alt="Magazine">
+      </div>
+      <div class="magazine-preview">
+        <img src="images/magazine/magcover.png" alt="Magazine">
+      </div>
+      <div class="magazine-preview">
+        <img src="images/magazine/magcover.png" alt="Magazine">
+      </div>
+      <div class="magazine-preview">
+        <img src="images/magazine/magcover.png" alt="Magazine">
+      </div>
     </section>
   </main>
   <?php include('content/footer.php') ?>
