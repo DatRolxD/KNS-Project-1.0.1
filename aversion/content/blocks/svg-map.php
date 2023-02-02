@@ -109,14 +109,14 @@
               d="m 451.14001,439.67595 c -1.56004,0.0821 -1.68717,0.875 -0.93732,1.375 0.74986,0.75 0.56239,0.25 1.18727,-0.1875 0.62488,-0.4375 0.93732,-1.25 -0.24995,-1.1875 z" />
           </g>
           <g id="g4663" flags inkscape:label="">
-            <a xlink:href="#poland" class="country-link">
+            <a xlink:href="poland.php" class="country-link">
               <g id="polish-flag" transform="matrix(10.309087,0,0,9.6717595,321.89948,270.19746)" inkscape:label="polish-flag"
                 clip-path="url(#clipPath5973)">
                 <rect width="11.25" height="3.75" fill="#ffffff" id="rect5952" x="-0.043212861" y="0.25364918" />
                 <rect y="4.0036492" width="11.25" height="3.75" fill="#dc143c" id="rect5954" x="-0.043212861" />
               </g>
             </a>
-            <a xlink:href="#croatia" class="country-link">
+            <a xlink:href="croatia.php" class="country-link">
               <g id="croatia-flag" transform="matrix(0.05934152,0,0,0.09769351,330.54716,380.08966)"
                 inkscape:label="croatia-flag" clip-path="url(#clipPath7693)">
                 <path d="m 0,168.09 h 963.78 v 149.6 H 0 Z" fill="#ffffff" fill-rule="evenodd" id="path6843" />
@@ -448,7 +448,7 @@
               </g>
             </a>
 
-            <a xlink:href="#czechia" class="country-link">
+            <a xlink:href="czechia.php" class="country-link">
               <g id="g4668" transform="matrix(0.01624606,0,0,0.013305,316.97549,323.4624)" inkscape:label="czech-flag"
                 style="stroke:#000000;stroke-width:1.01139;stroke-dasharray:none;stroke-opacity:1"
                 clip-path="url(#clipPath5084)">
@@ -461,7 +461,7 @@
                   points="0.001,0 2000,1249 0,2498 " id="polyline4658" />
               </g>
             </a>
-            <a xlink:href="#slovakia" class="country-link">
+            <a xlink:href="slovakia.php" class="country-link">
               <g id="slovak-flag" transform="matrix(0.10990479,0,0,0.09133174,358.95732,336.22305)"
                 inkscape:label="slovak-flag" clip-path="url(#clipPath2320)">
                 <rect y="100" width="450" height="100" fill="#0f218b" id="rect2222" x="0" />
@@ -483,7 +483,7 @@
                 </g>
               </g>
             </a>
-            <a xlink:href="#bulgaria" class="country-link">
+            <a xlink:href="bulgaria.php" class="country-link">
               <g id="bulgaria-flag" transform="matrix(15.546169,0,0,14.995373,409.07026,390.19165)"
                 inkscape:label="bulgaria-flag" clip-path="url(#clipPath12831)">
                 <rect width="4.5" height="3" fill="#ffffff" id="rect12804" x="0" y="0" />
@@ -491,7 +491,7 @@
                 <rect y="2" width="4.5" height="1" fill="#d62612" id="rect12808" x="0" />
               </g>
             </a>
-            <a xlink:href="#bosnia" class="country-link">
+            <a xlink:href="bosnia.php" class="country-link">
               <g id="bosnia-flag" transform="matrix(0.2847077,0,0,0.29992433,346.70234,391.41826)"
                 inkscape:label="bosnia-flag" clip-path="url(#clipPath14701)">
                 <rect y="3.5526999e-15" width="180" height="120" fill="#0d2b88" id="rect14649" x="0" />
@@ -511,7 +511,7 @@
                 <use transform="translate(-11.25,-15)" width="200" height="100" xlink:href="#a-1" id="use14668" />
               </g>
             </a>
-            <a xlink:href="#slovenia" class="country-link">
+            <a xlink:href="slovenia.php" class="country-link">
               <g id="slovenia-flag" transform="matrix(0.03417231,0,0,0.03545253,331.55583,375.06338)"
                 inkscape:label="slovenia-flag" clip-path="url(#clipPath5550)">
                 <rect width="900" height="600" fill="#ffffff" id="rect5132" x="0" y="0" />
@@ -543,7 +543,7 @@
                   fill="#ffffff" id="path5152" />
               </g>
             </a>
-            <a xlink:href="#serbia" class="country-link">
+            <a xlink:href="serbia.php" class="country-link">
               <g id="serbia-flag" transform="matrix(0.00540633,0,0,0.00543903,368.53113,377.92547)"
                 inkscape:label="serbia-flag" clip-path="url(#clipPath10753)">
                 <rect class="fil0" width="15000" height="10000" id="rect9435" x="0" y="0" />
@@ -1505,7 +1505,7 @@
                   id="path10083" />
               </g>
             </a>
-            <a xlink:href="#macedonia" class="country-link">
+            <a xlink:href="macedonia.php" class="country-link">
               <g id="macedonia-flag" transform="matrix(0.04011212,0,0,0.05930343,396.15211,420.4499)"
                 inkscape:label="macedonia-flag" clip-path="url(#clipPath15921)">
                 <path d="M 0,0 H 800 V 400 H 0 Z" fill="#d20000" id="path15880" />
@@ -1519,7 +1519,7 @@
                   d="m 450,200 a 50,50 0 1 0 -100,0 50,50 0 1 0 100,0" fill="#ffe600" id="path15892" />
               </g>
             </a>
-            <a xlink:href="#montenegro" class="country-link">
+            <a xlink:href="montenegro.php" class="country-link">
               <g id="montenegro-flag" transform="matrix(0.02971746,0,0,0.03408963,376.10435,412.67964)"
                 inkscape:label="montenegro-flag" clip-path="url(#clipPath18375)">
                 <rect width="900" height="600" fill="#d4af3a" id="rect17090" x="0" y="0" />
@@ -2603,7 +2603,7 @@
           id="path21872"
           style="fill:#fffdfd;fill-opacity:1;stroke:#000000;stroke-width:0.571911;stroke-dasharray:0.571911, 0.571911;stroke-dashoffset:0;stroke-opacity:1"
           inkscape:label="lusatia-back" />
-        <a xlink:href="#lusatia" class="country-link">
+        <a xlink:href="lusatia.php" class="country-link">
           <g id="g20895" transform="matrix(0.01770042,0,0,0.01995381,435.8983,259.16471)" inkscape:label="lusatia-flag"
             clip-path="url(#clipPath21868)">
             <path d="M 14.435916,16.822223 V 270.49951 l 391.120854,1e-5 0.007,-254.48154 z" style="fill:#0072bc;stroke:none"

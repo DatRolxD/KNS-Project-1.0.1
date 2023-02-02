@@ -17,6 +17,7 @@
       <img src="images/flags-svg/serbia.svg" alt="Serbia" id="serbia-flag" class="country-flag" />
       <img src="images/flags-svg/slovakia.svg" alt="Słowacja" id="slovakia-flag" class="country-flag" />
       <img src="images/flags-svg/slovenia.svg" alt="Słowenja" id="slovenia-flag" class="country-flag" />
+      <img src="images/flags-svg/lusatia.svg" alt="Łużyce" id="lusatia-flag" class="country-flag" />
     </header>
     <h2 id="mobile-current-page"></h2>
     <ul id="nav-list">
