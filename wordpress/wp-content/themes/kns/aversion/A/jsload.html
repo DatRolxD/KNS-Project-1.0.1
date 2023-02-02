@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://rsms.me/inter/inter.css');
+
+    :root {
+    --orange: rgb(186, 0, 0);
+}
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #spinner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      --size: 120px;
+      --border: 8px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      border: var(--border) solid rgba(32, 32, 32, 0.05);
+      border-right: var(--border) solid var(--orange);
+      animation: spin 1s linear infinite;
+}
+
+#logo {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  transition: transform .7s ease-in-out;
+}
+img:hover {
+  transform: rotate(360deg);
+}
+
+  </style>
+</head>
+<body>
+
+  <div id="spinner"></div>
+  <img src="images/logo.png" alt="logo" id="logo">
+
+  <script>
+  const logo = document.querySelector('#logo');
+  const spinner = document.querySelector('#spinner');
+
+  function loaded() {
+    spinner.style.opacity = '0';
+    logo.style.opacity = '1';
+  };
+  if (logo.complete) {
+    loaded();
+  }
+  else {
+    logo.addEventListener('load', loaded);
+    logo.addEventListener('error', function() {
+        alert('error');
+    });
+  };
+
+    /*
+    const spinner = document.querySelector('#spinner');
+    const logo = document.querySelector('#logo');
+    logo.style.visibility = 'hidden';
+    logo.addEventListener('load', () => {
+      spinner.style.visibility = 'hidden';
+      logo.style.visibility = 'visible';
+    })
+    */
+
+    /*
+    const spinner = document.querySelector('#spinner');
+const logo = document.querySelector('#logo');
+logo.addEventListener('DOMContentLoaded', () => {
+  alert('loaded');
+  });
+  */
+
+    /*const logo = document.querySelector('#logo');
+    logo.addEventListener('load', () => {
+      alert('Loaded')
+    })
+    */
+  </script>
+</body>
+</html>
