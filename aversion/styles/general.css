@@ -127,6 +127,50 @@ body{
   background-color: var(--primary-red);
 }
 
+#logo {
+  position: absolute;
+  transition: transform .7s ease-in-out;
+  opacity: 0;
+}
+
+#logo:hover {
+  transform: rotate(360deg);
+}
+
+#spinner-container {
+  width: 100%;
+  padding: 1rem;
+}
+
+#spinner {
+  --border: 0.5vw;
+  margin: 0 auto;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  border: var(--border) solid rgba(255, 255, 255, 0.25);
+  border-right: var(--border) solid var(--primary-bg);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#logo-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.country-flag {
+  display: none;
+  width: 20%;
+  margin-bottom: 1rem;
+}
+
 #nav-list {
   text-align: center;
   padding: 0;
@@ -359,6 +403,20 @@ body{
 }
 
 footer {
+  box-shadow: 0 8px 100px 2px var(--alpha-green);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.6s opacity, 1.5s height;
+  align-items: center;
+  color: #ffffff;
+  background-color: var(--alpha-green);
+}
+
+#fake-footer {
   box-shadow: 0 8px 100px 2px var(--alpha-green);
   position: fixed;
   display: flex;

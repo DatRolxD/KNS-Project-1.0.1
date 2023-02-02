@@ -1,3 +1,23 @@
+/* LOADING */
+const logo = document.querySelector('#logo');
+const spinner = document.querySelector('#spinner');
+const spinnerContainer = document.querySelector('#spinner-container');
+
+function logoLoaded() {
+  spinner.remove();
+  spinnerContainer.remove();
+  logo.style.position = 'static';
+  logo.style.opacity = '1';
+};
+if (logo.complete) {
+  logoLoaded();
+}
+else {
+  logo.addEventListener('load', logoLoaded);
+  logo.addEventListener('error', function() {
+      alert('error');
+  });
+};
 /* Determine the active page */
 let pathname = window.location.pathname;
 let navLinks = document.querySelectorAll('.nav-link');
