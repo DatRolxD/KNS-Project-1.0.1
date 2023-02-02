@@ -162,13 +162,13 @@ body{
 #logo-header {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .country-flag {
   display: none;
-  width: 20%;
-  margin-bottom: 1rem;
+  width: 5vw;
 }
 
 #nav-list {
@@ -410,42 +410,31 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 0.6s opacity, 1.5s height;
-  align-items: center;
-  color: #ffffff;
-  background-color: var(--alpha-green);
-}
-
-#fake-footer {
-  box-shadow: 0 8px 100px 2px var(--alpha-green);
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: 0.6s opacity, 0.6s height;
+  transition: transform 0.6s, box-shadow 0.6s, height 1.5s;
   align-items: center;
   color: #ffffff;
   background-color: var(--alpha-green);
 }
 
 .footer-js {
-  opacity: 0.7;
+  opacity: 1;
   height: 5vh;
   justify-content: center;
 }
 
-.footer-js-click{
-  height: 25rem;
-  opacity: 1;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
 .footer-js:hover {
   opacity: 1;
+  box-shadow: 0 8px 100px 30px var(--alpha-green);
+  transform: scale(1.5);
 }
+
+.footer-js-click{
+  height: 25rem;
+  justify-content: flex-start;
+  padding: 1rem;
+  box-shadow: 0 8px 100px 30px var(--alpha-green);
+}
+
 
 .hidden {
   display: none;
@@ -805,6 +794,7 @@ footer {
   }
 
   #logo-header {
+    margin-bottom: 0;
     width: 4rem;
   }
 

@@ -62,11 +62,81 @@ else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
   navLinks[1].classList.add('active');
   currentPage.textContent = 'O nas';
 }
-else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
+else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/bosnia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/bulgaria.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/croatia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/czechia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/lusatia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/macedonia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/montenegro.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/poland.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/serbia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/slovakia.php'
+|| pathname === '/KNS-Project-1.0.1/aversion/slovenia.php'
+){
   /* Set active link */
   navLinks[2].classList.add('active');
   /* Display active link on a phone */
+  if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
   currentPage.textContent = 'Aktualności';
+  }
+  /* Add country flag if selected news */
+  else if (pathname === '/KNS-Project-1.0.1/aversion/bosnia.php'){
+    currentPage.textContent = 'Bosnia';
+    let flag = document.querySelector('#bosnia-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/bulgaria.php'){
+    currentPage.textContent = 'Bulgaria';
+    let flag = document.querySelector('#bulgaria-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/croatia.php'){
+    currentPage.textContent = 'Chorwacja';
+    let flag = document.querySelector('#croatia-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/czechia.php'){
+    currentPage.textContent = 'Czechy';
+    let flag = document.querySelector('#czech-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/lusatia.php'){
+    currentPage.textContent = 'Łużyce';
+    let flag = document.querySelector('#lusatia-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/macedonia.php'){
+    currentPage.textContent = 'Macedonia';
+    let flag = document.querySelector('#macedonia-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/montenegro.php'){
+    currentPage.textContent = 'Montenegro';
+    let flag = document.querySelector('#montenegro-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/poland.php'){
+    currentPage.textContent = 'Polska';
+    let flag = document.querySelector('#poland-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/serbia.php'){
+    currentPage.textContent = 'Serbia';
+    let flag = document.querySelector('#serbia-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/slovakia.php'){
+    currentPage.textContent = 'Słowacja';
+    let flag = document.querySelector('#slovakia-flag');
+    flag.style.display = 'block';
+  }
+  else if (pathname === '/KNS-Project-1.0.1/aversion/slovenia.php'){
+    currentPage.textContent = 'Słowenia';
+    let flag = document.querySelector('#slovenia-flag');
+    flag.style.display = 'block';
+  }
   /* Set max length of a post preview */
   let postPreviewTexts = document.querySelectorAll('.post-preview-text');
   postPreviewTexts = [...postPreviewTexts];

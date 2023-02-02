@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <?php include('content/navbar.php') ?>
+  <?php include('content/blocks/navbar.php') ?>
 
   <main id="main-content">
     <div id="tooltip-container">
@@ -21,11 +21,11 @@
         <p id="info-paragraph">Po kliknięciu na dany kraj zostaniesz przekierowany na stronę aktualności wybranego kraju.</p>
       </div>
     <section id="map-container">
-      <?php include('content/svg-map.php') ?>
+      <?php include('content/blocks/svg-map.php') ?>
     </section>
   </main>
 
-  <?php include('content/footer.php') ?>
+  <?php include('content/blocks/footer.php') ?>
 
 
   <script src="scripts/main.js"></script>
