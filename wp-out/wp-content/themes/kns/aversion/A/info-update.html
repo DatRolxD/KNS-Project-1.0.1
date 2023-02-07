@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome interactions</title>
+  <style>
+    body {
+      background: #fff6f2;
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    }
+
+    #tooltip-container {
+      background: #ffcd72;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 250px;
+      clip-path: circle(10% at 91% 23%);
+      transition: all .5s ease-in-out;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    #i-button {
+      float: right;
+      color: white;
+      font-weight: bold;
+      transition: color .5s;
+      position: relative;
+    }
+
+    #info-heading {
+      color: white;
+      margin: 0;
+    }
+
+    #info-paragraph {
+      color: white; 
+      font-size: 0.8rem;
+    }
+
+
+  </style>
+</head>
+<body>
+    <div id="tooltip-container">
+      <span id="i-button">i</span>
+      <h3 id="info-heading">Mapa</h3>
+      <p id="info-paragraph">Po kliknięciu na dany kraj zostaniesz przekierowany na stronę aktualności wybranego kraju.</p>
+    </div>
+
+  <script>
+    const tooltipContainer = document.querySelector('#tooltip-container');
+    const iButton = document.querySelector('#i-button');
+    let tooltipOpen = false;
+
+    tooltipContainer.addEventListener('click', () => {
+      console.log('click');
+      if (!tooltipOpen){
+      tooltipContainer.style.clipPath = 'circle(75%)';
+      tooltipContainer.style.background = '#ba0000';
+      iButton.textContent = 'x';
+      tooltipOpen = true;
+      }
+      else {
+        tooltipContainer.removeAttribute('style');
+        iButton.textContent = 'i';
+        tooltipOpen = false;
+      }
+    });
+  </script>
+</body>
+</html>

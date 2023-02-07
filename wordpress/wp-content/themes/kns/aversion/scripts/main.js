@@ -18,20 +18,10 @@ else {
       alert('error');
   });
 };
-/* Determine the active page */
-let pathname = window.location.pathname;
-let navLinks = document.querySelectorAll('.nav-link');
-const currentPage = document.querySelector('#mobile-current-page');
-const mediaQuery = window.matchMedia('(max-width: 712px)');
-const mediaQueryTablet = window.matchMedia('(min-width:712px) and (max-width: 992px)');
-let indexMatch = false;
-let tooltipContainer;
-if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-Project-1.0.1/aversion/' ){
-  navLinks[0].classList.add('active');
-  currentPage.textContent = 'Strona główna';
-  /* TOOLTIP FOR THE MAP ONLY INDEX.PHP */
-  indexMatch = true;
-  tooltipContainer = document.querySelector('#tooltip-container');
+
+/* Map tooltip container */
+  let tooltipContainer = document.querySelector('#tooltip-container');
+  if (tooltipContainer !== undefined && tooltipContainer !== null){
   const iButton = document.querySelector('#i-button');
   let tooltipOpen = false;
   function tooltip () {
@@ -48,6 +38,27 @@ if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-P
       }
   };
   tooltipContainer.addEventListener('click', tooltip);
+}
+
+/* Determine the active page */
+let pathname = window.location.pathname;
+let navLinks = document.querySelectorAll('.nav-link');
+const currentPage = document.querySelector('#mobile-current-page');
+const mediaQuery = window.matchMedia('(max-width: 712px)');
+const mediaQueryTablet = window.matchMedia('(min-width:712px) and (max-width: 992px)');
+let indexMatch = false;
+
+let indexPage = document.querySelector('#index-page');
+let aboutPage = document.querySelector('#about-page');
+let newsPage = document.querySelector('#news-page');
+let magazinePage = document.querySelector('#magazine-page');
+
+
+if (indexPage !== undefined && indexPage !== null){
+  navLinks[0].classList.add('active');
+  currentPage.textContent = 'Strona główna';
+  /* TOOLTIP FOR THE MAP ONLY INDEX.PHP */
+  indexMatch = true;
   /* MOBILE-ONLY Change viewbox of the map */
   const mapSvg = document.querySelector('#map-europe');
   if (mediaQuery.matches) {
@@ -58,85 +69,86 @@ if (pathname === '/KNS-Project-1.0.1/aversion/index.php' || pathname === '/KNS-P
   }
 
 }
-else if (pathname === '/KNS-Project-1.0.1/aversion/about.php'){
+else if (aboutPage !== undefined && aboutPage !== null){
   navLinks[1].classList.add('active');
   currentPage.textContent = 'O nas';
 }
-else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/bosnia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/bulgaria.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/croatia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/czechia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/lusatia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/macedonia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/montenegro.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/poland.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/serbia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/slovakia.php'
-|| pathname === '/KNS-Project-1.0.1/aversion/slovenia.php'
-){
+else if (newsPage !== undefined && newsPage !== null){
   /* Set active link */
   navLinks[2].classList.add('active');
   /* Display active link on a phone */
-  if (pathname === '/KNS-Project-1.0.1/aversion/news.php'){
+  let news = document.querySelector('#news');
+  let bosnia = document.querySelector('#bosnia');
+  let bulgaria = document.querySelector('#bulgaria');
+  let croatia = document.querySelector('#croatia');
+  let czechia = document.querySelector('#czechia');
+  let lusatia = document.querySelector('#lusatia');
+  let macedonia = document.querySelector('#macedonia');
+  let montenegro = document.querySelector('#montenegro');
+  let poland = document.querySelector('#poland');
+  let serbia = document.querySelector('#serbia');
+  let slovakia = document.querySelector('#slovakia');
+  let slovenia = document.querySelector('#slovenia');
+  if (news !== undefined && news !== null){
   currentPage.textContent = 'Aktualności';
   }
   /* Add country flag if selected news */
-  else if (pathname === '/KNS-Project-1.0.1/aversion/bosnia.php'){
+  else if (bosnia !== undefined && bosnia !== null){
     currentPage.textContent = 'Bosnia';
     let flag = document.querySelector('#bosnia-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/bulgaria.php'){
+  else if (bulgaria !== undefined && bulgaria !== null){
     currentPage.textContent = 'Bulgaria';
     let flag = document.querySelector('#bulgaria-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/croatia.php'){
+  else if (croatia !== undefined && croatia !== null){
     currentPage.textContent = 'Chorwacja';
     let flag = document.querySelector('#croatia-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/czechia.php'){
+  else if (czechia !== undefined && czechia !== null){
     currentPage.textContent = 'Czechy';
     let flag = document.querySelector('#czech-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/lusatia.php'){
+  else if (lusatia !== undefined && lusatia !== null){
     currentPage.textContent = 'Łużyce';
     let flag = document.querySelector('#lusatia-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/macedonia.php'){
+  else if (macedonia !== undefined && macedonia !== null){
     currentPage.textContent = 'Macedonia';
     let flag = document.querySelector('#macedonia-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/montenegro.php'){
+  else if (montenegro !== undefined && montenegro !== null){
     currentPage.textContent = 'Montenegro';
     let flag = document.querySelector('#montenegro-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/poland.php'){
+  else if (poland !== undefined && poland !== null){
     currentPage.textContent = 'Polska';
     let flag = document.querySelector('#poland-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/serbia.php'){
+  else if (serbia !== undefined && serbia !== null){
     currentPage.textContent = 'Serbia';
     let flag = document.querySelector('#serbia-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/slovakia.php'){
+  else if (slovakia !== undefined && slovakia !== null){
     currentPage.textContent = 'Słowacja';
     let flag = document.querySelector('#slovakia-flag');
     flag.style.display = 'block';
   }
-  else if (pathname === '/KNS-Project-1.0.1/aversion/slovenia.php'){
+  else if (slovenia !== undefined && slovenia !== null){
     currentPage.textContent = 'Słowenia';
     let flag = document.querySelector('#slovenia-flag');
     flag.style.display = 'block';
   }
+  /* TO BE REMOVED */
   /* Set max length of a post preview */
   let postPreviewTexts = document.querySelectorAll('.post-preview-text');
   postPreviewTexts = [...postPreviewTexts];
@@ -157,7 +169,8 @@ else if (pathname === '/KNS-Project-1.0.1/aversion/news.php'
     }
   })
 }
-else if (pathname === '/KNS-Project-1.0.1/aversion/magazine.php'){
+ /* ------------------------------------- */
+else if (magazinePage !== undefined && magazinePage !== null){
   navLinks[3].classList.add('active');
   currentPage.textContent = 'Czasopismo';
 }
@@ -180,8 +193,9 @@ menuBtn.addEventListener('click', () => {
       footer.classList.remove('footer-js-click');
       footerStatus = false;
     }
-    if (indexMatch){
+    if (indexMatch && mediaQuery.matches || mediaQueryTablet.matches){
     tooltipContainer.style.opacity = '0';
+    tooltipContainer.style.transform = 'translate(20000px)';
     tooltipContainer.removeEventListener('click', tooltip);
     };
     currentPage.style.opacity = '0';
@@ -194,8 +208,9 @@ menuBtn.addEventListener('click', () => {
     });
   }
   else {
-    if (indexMatch){
+    if (indexMatch && mediaQuery.matches || mediaQueryTablet.matches){
       tooltipContainer.style.opacity = '1';
+      tooltipContainer.style.transform = '';
       tooltipContainer.addEventListener('click', tooltip);
       };
     currentPage.style.opacity = '1';
@@ -226,8 +241,9 @@ footerArrow.addEventListener('click', () => {
         link.classList.add('responsive-invisible');
       });
     }
-    if (indexMatch){
+    if (indexMatch && mediaQuery.matches || mediaQueryTablet.matches){
       tooltipContainer.style.opacity = '0';
+      tooltipContainer.style.transform = 'translate(20000px)';
       tooltipContainer.removeEventListener('click', tooltip);
       };
     footerArrow.style.transform = 'rotateX(-180deg)';
@@ -238,8 +254,9 @@ footerArrow.addEventListener('click', () => {
     footerContent.classList.add('footer-grid');
   }
   else {
-    if (indexMatch){
+    if (indexMatch && mediaQuery.matches || mediaQueryTablet.matches){
       tooltipContainer.style.opacity = '1';
+      tooltipContainer.style.transform = '';
       tooltipContainer.addEventListener('click', tooltip);
       };
     footerContent.removeAttribute('style');
