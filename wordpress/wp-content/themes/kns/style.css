@@ -29,6 +29,7 @@ Author URI: https://www.youtube.com/watch?v=-h7gOJbIpmo&t=2609s&ab_channel=freeC
 html {
   font-family: var(--ff-primary), sans-serif;
   color: var(--primary-black);
+  scrollbar-color: var(--primary-red-rgba) var(--primary-red-rgbb);
 }
 
 /* CSS RESET */
@@ -110,6 +111,8 @@ select {
 body{
   overflow: hidden;
 }
+
+
 
 *::-webkit-scrollbar {
   width: 0.25rem;
@@ -618,7 +621,7 @@ footer {
  transform: translateY(-3px) scale(1.1);
 }
 
-#main-heading {
+.main-heading {
   border-radius: 6px;
   margin: 0 auto;
   padding: 0.5rem; 
@@ -627,7 +630,7 @@ footer {
   font-size: 1.75rem;
 }
 
-#main-heading::after{
+.main-heading::after{
   display: block;
   margin: 0 auto;
   width: 75%;
@@ -636,7 +639,7 @@ footer {
   border: 1px solid var(--primary-red);
 }
 
-#main-text-content {
+.main-text-content {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -655,6 +658,12 @@ footer {
   gap: 0.5rem;
 }
 
+.features-grid > .wp-block-group__inner-container { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 0.5rem;
+}
+
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -668,32 +677,34 @@ footer {
   text-align: center;
 }
 
-.profiles {
+.profiles > .wp-block-group__inner-container {
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 0.5rem;
 }
 
-.profile-card {
+
+
+.profile-card > .wp-block-group__inner-container{
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 0 auto;
-  min-height: 15rem;
   border-radius: 6px;
   background-color: var(--primary-red-rgba);
   color: var(--primary-bg);
 }
 
-.profile-picture-container {
+.profile-picture-container > .wp-block-group__inner-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 1rem;
 }
 
-.profile-picture{
+.profile-picture > *{
+  min-width: 3vw;
+  min-height: 15vh;
   object-fit: cover;
-  min-height: 50%;
   border-radius: 6px;
   border: 1px solid var(--primary-bg);
 }
@@ -725,13 +736,13 @@ footer {
 }
 
 @media only screen and (max-width: 992px) {
-  .features-grid {
+  .features-grid  > .wp-block-group__inner-container{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
-  .profile-card{
+  .profile-card > .wp-block-group__inner-container{
     width: 100%;
-    min-height: 12rem;
+
   }
 
   .profile-name {

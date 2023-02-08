@@ -92,4 +92,8 @@ function kns_custom_logo_setup()
 }
 add_action('after_setup_theme', 'kns_custom_logo_setup');
 
+
+
+
+
 ?>
