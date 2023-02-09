@@ -6,30 +6,8 @@
     </svg>
   </div>
   <div id="footer-content">
-    <div class="footer-column">
-      <div class="footer-column-heading">
-        <h3>Współpraca</h3>
-        <div class="plus-holder hidden">
-          <div class="plus"></div>
-        </div>
-      </div>
-      <div id="cooperation-grid" class="js-display mobile-invisible">
-        <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
-              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"
-              alt=" Muzeum Historii Polskich Żydów"></a></div>
-        <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
-              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"></a>
-        </div>
-        <div class=" cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
-              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"
-              alt=" Muzeum Historii Polskich Żydów"></a>
-        </div>
-        <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
-              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"
-              alt="Muzeum Historii Polskich Żydów"></a>
-        </div>
-      </div>
-    </div>
+    <?php get_sidebar(); ?>
+
     <div class="footer-column">
       <div class="footer-column-heading">
         <h3>Kontakt</h3>
@@ -126,6 +104,16 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="login">
+    <p>Created by: Roland Nemec</p>
+    <p>
+      <?php if (is_user_logged_in()) { ?>
+        <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+      <?php } else { ?>
+        <a href="wp-login.php" title="Members Area Login" rel="home">Login</a>
+      <?php } ?>
+    </p>
   </div>
 </footer>
 

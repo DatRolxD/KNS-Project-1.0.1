@@ -18,8 +18,6 @@ get_header();
                   <?php
                   the_tags();
                   ?>
-                  <span class="post-preview-tag">Czechy</span>
-                  <span class="post-preview-tag">Praga</span>
                 </span>
                 <span class="post-preview-date">
                   <?php the_date(); ?>
@@ -38,13 +36,11 @@ get_header();
             </h2>
             <div class="post-full-content">
               <div class="post-preview-text-container">
-                <div class="post-preview-text">
+                <div class="post-text">
                   <?php the_content(); ?>
                 </div>
               </div>
-              <?php
-              the_post_thumbnail('post-thumbnail', ['class' => "post-picture", 'title' => 'Feature image']);
-              ?>
+
             </div>
           </div>
         <?php endwhile; else: ?>

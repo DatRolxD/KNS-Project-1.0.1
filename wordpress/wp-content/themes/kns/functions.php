@@ -93,7 +93,22 @@ function kns_custom_logo_setup()
 add_action('after_setup_theme', 'kns_custom_logo_setup');
 
 
-
+add_action('widgets_init', 'my_register_sidebars');
+function my_register_sidebars()
+{
+  /* Register the 'primary' sidebar. */
+  register_sidebar(
+    array(
+      'id' => 'primary',
+      'name' => __('Współpraca'),
+      'description' => __('A short description of the sidebar.'),
+      'before_widget' => '<div id="%1$s" class="image-container">
+      ',
+      'after_widget' => '</div>',
+    )
+  );
+  /* Repeat register_sidebar() code for additional sidebars. */
+}
 
 
 ?>

@@ -1,0 +1,36 @@
+<div class="footer-column">
+      <div class="footer-column-heading">
+            <h3>Współpraca</h3>
+            <div class="plus-holder hidden">
+                  <div class="plus"></div>
+            </div>
+      </div>
+      <div id="cooperation-grid" class="js-display mobile-invisible">
+            <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
+                              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"
+                              alt=" Muzeum Historii Polskich Żydów"></a></div>
+            <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
+                              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"></a>
+            </div>
+            <div class=" cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
+                              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"
+                              alt=" Muzeum Historii Polskich Żydów"></a>
+            </div>
+            <div class="cooperation-card"><a href="https://polin.pl/pl" target="_blank"><img class="coop-logo"
+                              src="<?php echo get_theme_file_uri('aversion/images/coop/polin.png'); ?>"
+                              alt="Muzeum Historii Polskich Żydów"></a>
+            </div>
+      </div>
+
+
+
+</div>
+
+
+<div class="footer-column-heading">
+      <h3>Współpraca</h3>
+      <div class="plus-holder hidden">
+            <div class="plus"></div>
+      </div>
+</div>
+<div id="cooperation-grid" class="js-display mobile-invisible">

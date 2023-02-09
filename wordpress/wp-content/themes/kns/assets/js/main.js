@@ -228,6 +228,7 @@ menuBtn.addEventListener('click', () => {
 const footer = document.querySelector('#footer');
 const footerArrow = document.querySelector('#footer-arrow');
 const footerContent = document.querySelector('#footer-content');
+let loginContent = document.querySelector('#login');
 let footerStatus = false; 
 
 footerArrow.addEventListener('click', () => {
@@ -252,6 +253,8 @@ footerArrow.addEventListener('click', () => {
     footer.classList.add('footer-js-click');
     footerContent.style.display = 'grid';
     footerContent.classList.add('footer-grid');
+    loginContent.style.opacity = '1';
+    loginContent.style.bottom = '0';
   }
   else {
     if (indexMatch && mediaQuery.matches || mediaQueryTablet.matches){
@@ -264,15 +267,45 @@ footerArrow.addEventListener('click', () => {
     footerArrow.removeAttribute('style');
     footer.classList.add('footer-js');
     footer.classList.remove('footer-js-click');
+    loginContent.removeAttribute('style');
     footerStatus = false;
   }
 });
+
+/* WP specific */
+const primarySidebar = document.querySelector('#sidebar-primary');
+primarySidebar.setAttribute('class', 'footer-column')
+if (primarySidebar !== null){
+  const footerColumnHeading = document.createElement('div');
+  primarySidebar.appendChild(footerColumnHeading);
+  footerColumnHeading.setAttribute('class', 'footer-column-heading');
+  const footerHeading = document.createElement('h3');
+  footerHeading.textContent = 'Współpraca';
+  const plusHolderContainer = document.createElement('div');
+  plusHolderContainer.classList.add('plus-holder');
+  plusHolderContainer.classList.add('hidden');
+  const plusHolder = document.createElement('div');
+  plusHolder.classList.add('plus');
+  footerColumnHeading.appendChild(footerHeading);
+  footerColumnHeading.appendChild(plusHolderContainer);
+  plusHolderContainer.appendChild(plusHolder);
+  const cooperationGrid = document.createElement('div');
+  primarySidebar.appendChild(cooperationGrid);
+  cooperationGrid.setAttribute('id', 'cooperation-grid');
+  cooperationGrid.setAttribute('class', 'js-display mobile-invisible');
+  let imageContainers = document.querySelectorAll('.image-container');
+  imageContainers = [...imageContainers];
+  imageContainers.forEach(imageContainer => {
+    imageContainer.classList.add('cooperation-card');
+    cooperationGrid.appendChild(imageContainer);
+  })
+};
 
 /* MOBILE-ONLY Open the content of each footer heading */
 let plusHolder = document.querySelectorAll('.plus-holder');
 plusHolder = [...plusHolder];
 let contentOpen = [];
-let footerColumns = document.querySelectorAll('.footer-column')
+let footerColumns = document.querySelectorAll('.footer-column');
 footerColumns = [...footerColumns];
 
 for (let c = 0; c < plusHolder.length; c++){
@@ -369,6 +402,35 @@ clickableLinks.forEach(clickableLink => {
     tags.forEach(tag => {
       tag.textContent = `#${tag.textContent}`;
     });
+};
+
+/* WP magazine */
+const magazineContainer = document.querySelector('#magazine-container');
+if (magazineContainer !== null){
+  let imageFigures = magazineContainer.querySelectorAll('figure');
+  imageFigures = [...imageFigures];
+  imageFigures.forEach(imageFigure => {
+    imageFigure.setAttribute('class', 'magazine-preview');
+    imageFigure.firstChild.removeAttribute('width');
+    imageFigure.firstChild.removeAttribute('height');
+    imageFigure.firstChild.removeAttribute('sizes');
+    imageFigure.firstChild.setAttribute('class', 'magazine-preview-picture');
+  })
 }
 
-
+/*
+const profiles = document.querySelector('.profiles');
+let profileCards = document.querySelectorAll('.profile-card');
+profileCards = document.querySelectorAll('.profile-card');
+if (profileCards !== null){
+  profileCards = [...profileCards]
+  profileCards.forEach(profileCard => {
+    profiles.appendChild(profileCard);
+    let profilePictures = profileCard.querySelectorAll('figure');
+    profilePictures = [...profilePictures]
+    profilePictures.forEach(profilePicture => {
+      profilePicture.setAttribute('class', 'profile-picture');
+    })
+  })
+}
+*/
